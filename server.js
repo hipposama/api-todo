@@ -9,7 +9,21 @@ require('dotenv').config()
 const mysql = require('mysql2/promise');
 const pool = mysql.createPool(process.env.DATABASE_URL);
 
-app.use(cors())
+const allowedOrigins = ['http://localhost:3000', 'https://todo-omega-hazel.vercel.app'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: 'GET, POST, PUT, DELETE, OPTIONS',
+  allowedHeaders: 'Content-Type, Authorization, X-Requested-With',
+};
+
+app.use(cors(corsOptions));
 app.use(express.json())
 
 app.get('/', (req, res) => {
