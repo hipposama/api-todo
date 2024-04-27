@@ -18,6 +18,8 @@
 
 ###
 
-<p align="left">Before using the API, make sure to set up your environment variables by creating a .env file in the root directory of your project. This file should contain sensitive information such as your API key or database credentials.</p>
+Don't forget to update `server.js` on line 12 to replace the `allowedOrigins` array with your own URLs
 
-###
+```bash
+const allowedOrigins = ['http://localhost:3000', 'https://yourdomain.com'];
+```
