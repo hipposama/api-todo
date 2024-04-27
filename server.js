@@ -9,7 +9,7 @@ require('dotenv').config()
 const mysql = require('mysql2/promise');
 const pool = mysql.createPool(process.env.DATABASE_URL);
 
-const allowedOrigins = ['http://localhost:3000', 'https://todo-omega-hazel.vercel.app'];
+const allowedOrigins = ['http://localhost:3000', 'todo-hipposama.vercel.app', 'https://todo-omega-hazel.vercel.app'];
 
 const corsOptions = {
   origin: function (origin, callback) {
