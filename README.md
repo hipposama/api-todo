@@ -23,3 +23,22 @@ Don't forget to update `server.js` on line 12 to replace the `allowedOrigins` ar
 ```bash
 const allowedOrigins = ['http://localhost:3000', 'https://yourdomain.com'];
 ```
+
+## Database Schema
+
+### Todo Table
+
+| Column Name | Data Type     | Description                       |
+|-------------|---------------|-----------------------------------|
+| id          | varchar(36)   | Unique ID of the todo item        |
+| user_email  | varchar(255)  | Email of the user associated with the todo |
+| title       | varchar(255)  | Title of the todo item            |
+| progress    | int           | Progress of the todo item         |
+| date        | varchar(255)  | Date related to the todo item     |
+
+### Users Table
+
+| Column Name | Data Type     | Description                       |
+|-------------|---------------|-----------------------------------|
+| email       | varchar(255)  | Email of the user (Primary Key)   |
+| password    | varchar(255)  | Encrypted password of the user    |
